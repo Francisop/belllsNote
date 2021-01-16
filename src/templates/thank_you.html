@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css%}
+<style>
+    .mobile {
+        display: none;
+    }
+
+    @media screen and (max-width: 800px) {
+        .web {
+            display: none;
+        }
+
+        .mobile {
+            display: inline-block;
+        }
+    }
+</style>
+{% endblock css %}
+
+{% block content%}
+<div class="container web">
+
+
+    <div class="container" style="width: 50%; margin:0 auto;">
+        <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_t7jtcf8d.json" background="#FFFFFF" speed="1"
+            loop autoplay></lottie-player>
+    </div>
+
+    <h5>Made by Goodness with <i class="fa fa-heart" aria-hidden="true"></i>
+        <br> <small> contact-us: 0805657265 </small>
+    </h5>
+
+    <a name="" id="" class="btn btn-primary" href="/" role="button">Go Back</a>
+
+
+
+
+</div>
+
+<div class="container mobile">
+
+
+    <div class="container" style="width: 100%; margin:0 auto;">
+        <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_t7jtcf8d.json" background="#FFFFFF" speed="1"
+            loop autoplay></lottie-player>
+    </div>
+
+    <h5>Made by Goodness with <i class="fa fa-heart" aria-hidden="true"></i>
+        <br> <small> contact-us: 0805657265 </small>
+    </h5>
+
+    <a name="" id="" class="btn btn-primary" href="/" role="button">Go Back</a>
+
+
+
+
+</div>
+{% endblock content %}

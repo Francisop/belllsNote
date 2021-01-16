@@ -1,20 +1,140 @@
 {% extends 'base.html' %}
-{%load crispy_forms_tags %}
+{% load static %}
 
 
-{% block content%}
-<div class="container">
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{note_form2 | crispy}}
-        {{note_form | crispy}}
-    
-        <button type="submit" class="btn btn-success">Write my Note</button>
-    
-    </form>
+{% block css%}
+<link rel="stylesheet" href="{% static  'css/index.css'%}">
+{% endblock css %}
 
-    <div>
-        <h4>Made by Goodness with <i class="fa fa-heart" aria-hidden="true"></i></h4>
-    </div>
+
+{% block content %}
+
+
+
+<div class="container web">
+    <p><small>
+            Made by Goodness with <i class="fa fa-heart" aria-hidden="true"></i>
+        </small>
+    </p>
+
+    <nav class="navbar navbar-expand-sm navbar-light bg-white">
+        <a class="navbar-brand" href="#">BellsNote</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="https://paystack.com/pay/29i0q26gfo">Pay <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Print <span class="badge badge-primary">new</span></a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+
+    <section>
+        <div class="row" style="margin-top: 22px;">
+            <div class="col">
+                <p style="margin-top: 82px;">
+                <h2 id="bold-details">Print. Write. Deliver.</h2>
+                <span></span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit placeat autem ea eveniet iusto
+                fuga eius commodi. Mollitia, unde maiores?
+                </p>
+
+                <a style="margin-left: 52px;width: 50%;" name="" id="" class="btn btn-dark" href="note/"
+                    role="button">Write my Note</a>
+                <br><br>
+
+            </div>
+            <div class="col">
+                <img id="img-detail" src="{% static 'assets/j.jpg'%}" alt="" width="400rem">
+            </div>
+        </div>
+    </section>
+
+    <br><br>
 </div>
+
+<div class="container mobile">
+
+    <nav class="navbar navbar-expand-sm navbar-light bg-white">
+        <a class="navbar-brand" href="#">BellsNote</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="https://paystack.com/pay/29i0q26gfo">Pay <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Print <span class="badge badge-primary">new</span></a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+
+    <section style="margin: 0 auto; width: 100%;">
+        <div class="container" style="width: 100%; margin:0 auto;">
+            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_i8P8Hl.json" background="white" speed="1"
+                loop autoplay></lottie-player>
+        </div>
+        <div>
+            <p>
+            <h2 id="bold-details">Print. Write. Deliver.</h2>
+            <span></span>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit placeat autem ea eveniet iusto
+            fuga eius commodi. Mollitia, unde maiores?
+            </p>
+
+            <a style="margin-left: 52px;width: 70%;" name="" id="" class="btn btn-dark" href="note/" role="button">Write
+                my
+                Note</a>
+            <br><br>
+
+        </div>
+    </section>
+</div>
+
+<style>
+    .mobile {
+        display: none;
+    }
+
+    @media screen and (max-width: 800px) {
+        .web {
+            display: none;
+        }
+
+        .mobile {
+            display: inline-block;
+        }
+    }
+</style>
+
+
+
+
+
+
+
+
+
 {% endblock content %}

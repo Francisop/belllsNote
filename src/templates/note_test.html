@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{%load crispy_forms_tags %}
+
+{% block css%}
+<link rel="stylesheet" href="{% static  'note.css'%}">
+{% endblock css %}
+
+{% block content%}
+<div class="container p-1">
+    <div class="container p-1" style="background-color: rgb(59, 211, 97);">
+        <h3 style="color: rgb(0, 0, 0);" >Write my Note</h3>
+        <h6>Contact us: 08056466478 or 0800-goodness for special offers</h6>
+    </div>
+    <style>
+
+    </style>
+
+    <form class="shadow p-5" method="POST" enctype="multipart/form-data">
+    <h6 class="m-1">** Per page costs  50(Naira)**</h6>
+    <br>
+        {% csrf_token %}
+        {{note_form2 | crispy}}
+        {{note_form | crispy}}
+
+        <button type="submit" class="btn btn-success">Submit</button>
+
+    </form>
+
+
+</div>
+{% endblock content %}

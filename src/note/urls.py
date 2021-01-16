@@ -1,7 +1,9 @@
 from os import name
 from django.urls import path
-from note.views import (Index)
+from note.views import (Index, NoteView, thank_you_view)
 
 urlpatterns = [
     path('',Index.as_view(), name='index'),
+    path('note/',NoteView.as_view(), name='note'),
+    path('thank^you/',thank_you_view, name='thank_you'),
 ]
