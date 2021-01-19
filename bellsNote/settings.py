@@ -26,7 +26,7 @@ SECRET_KEY = 'kixt3cu48@7i0y(^rzg%o1t%i__g!3cat$b&-rv@qs3s$7qhh)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://bellsnote.herokuapp.com']
 
 
 # Application definition
@@ -140,9 +140,14 @@ STATIC_URL = '/static/'
 #     os.path.join(BASE_DIR, 'static'),
 # )
 
+#  Add configuration for static files storage using whitenoise
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+
 
 django_heroku.settings(locals())
 
