@@ -9,6 +9,9 @@ class NoteForm(ModelForm):
         # note_pic = MyFormField(min_num=1, max_num=3, max_file_size=1024*1024*5)
         model = Note
         fields = ['delivery_location', 'mobile_number', 'name', 'deadline']
+        widgets = {
+            'deadline': widgets.DateInput(attrs={'type':'date'}),
+        }
 
 
 class NoteImageForm(ModelForm):

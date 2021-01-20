@@ -15,7 +15,7 @@ class Note(models.Model):
         max_length=10, choices=DELIVERY_LOCATION_CHOICES)
     mobile_number = models.CharField(max_length=11)
     name = models.CharField(max_length=100)
-    deadline = models.DateTimeField(default='2012-09-04 06:00:00')  # auto_now_add=True
+    deadline = models.DateField()  # auto_now_add=True
 
     def __str__(self):
         return self.name
