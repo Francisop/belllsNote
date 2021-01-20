@@ -5,11 +5,18 @@ from note.models import Note, NoteImage
 
 # Create your views here.
 
-
 class Index(View):
+    template_name = 'index.html'
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
+
+
+
+
+class NoteView(View):
     note_form_class = NoteForm
     note_image_form_class = NoteImageForm
-    template_name = 'index.html'
+    template_name = 'note.html'
 
     def get(self, request, *args, **kwargs):
         noteForm = self.note_form_class
@@ -26,8 +33,9 @@ class Index(View):
             name = noteForm.cleaned_data['name']
             delivery_location = noteForm.cleaned_data['delivery_location']
             mobile_number = noteForm.cleaned_data['mobile_number']
+            deadline = noteForm.cleaned_data['deadline']
             note = Note(name=name,
-                        delivery_location=delivery_location, mobile_number=mobile_number)
+                        delivery_location=delivery_location, mobile_number=mobile_number,deadline=deadline)
             note.save()
             # work on the multiple images first
             if file:
