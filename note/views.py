@@ -12,6 +12,13 @@ class Index(View):
 
 
 
+class PrintView(View):
+    template_name = 'print.html'
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
+
+
+
 
 class NoteView(View):
     note_form_class = NoteForm

@@ -1,17 +1,41 @@
 {% extends 'base.html' %}
+{% load static %}
 {%load crispy_forms_tags %}
 
 
 {% block content%}
 
-<style></style>
 
-<div class="container p-2 mobile">
-    <p>Made by Goodness with <span> <i class="fa fa-heart" aria-hidden="true"></i> </span></p>
+
+<div>
+
+
+    <style>
+        .mobile {
+            display: none;
+        }
+    
+        @media screen and (max-width: 600px) {
+            .web {
+                display: none;
+            }
+    
+            .mobile {
+                display: inline-block;
+    
+            }
+    
+        }
+    </style>
+
+<div class="container web">
+    <div>
+        <p>Made by Goodness with <span> <i class="fa fa-heart" aria-hidden="true"></i> </span></p>
+    </div>
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <a class="navbar-brand" href="/">bellsNote</a>
-        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-            aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
@@ -23,7 +47,48 @@
                     <a class="nav-link" href="/">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Print <span class="badge badge-primary">new</span> </a>
+                    <a class="nav-link" href="print/">Print <span class="badge badge-primary">new</span> </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <section>
+        <div class="row p-5">
+            <div class="col">
+                <h1>Pickup. Write your Note. Print. Deliver.</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, pariatur.</p>
+                <a name="" id="" style="width: 100%;" class="btn btn-dark" href="note/" role="button">Get Started</a>
+            </div>
+            <div class="col">
+                <img src="{%static 'img/76320.jpg' %}" alt="" style="max-width: 85%;" srcset="">
+
+            </div>
+        </div>
+    </section>
+
+</div>
+
+
+<div class="container p-2 mobile">
+    <p>Made by Goodness with <span> <i class="fa fa-heart" aria-hidden="true"></i> </span></p>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <a class="navbar-brand" href="/">bellsNote</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="https://paystack.com/pay/29i0q26gfo">Pay</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="print/">Print <span class="badge badge-primary">new</span> </a>
                 </li>
             </ul>
 
@@ -32,14 +97,15 @@
 
 
     <div class="lottie-anime" style="height: 25rem;width:100%; margin: 0 auto;">
-       <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
         <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_i8P8Hl.json" background="transparent"
             speed="1" loop autoplay></lottie-player>
     </div>
-<div>
-    <h1>Write your Note. Print. Deliver.</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, pariatur.</p>
-    <a name="" id=""  style="width: 70%;" class="btn btn-dark" href="note/" role="button">Get Started</a>
+    <div>
+        <h1>Pickup. Write your Note. Print. Deliver.</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, pariatur.</p>
+        <a name="" id="" style="width: 100%;" class="btn btn-dark" href="note/" role="button">Get Started</a>
+    </div>
 </div>
 </div>
 {% endblock content %}
