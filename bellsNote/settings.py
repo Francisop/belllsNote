@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import django_heroku
+import dj_database_url
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -84,12 +85,16 @@ WSGI_APPLICATION = 'bellsNote.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
+
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 
 
@@ -141,7 +146,7 @@ STATIC_URL = '/static/'
 # )
 
 #  Add configuration for static files storage using whitenoise
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 MEDIA_URL = '/media/'
@@ -151,4 +156,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 django_heroku.settings(locals())
 
+
+options = DATABASES['default'].get('OPTIONS', {})
+options.pop('sslmode', None)
 
