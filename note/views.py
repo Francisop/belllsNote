@@ -12,6 +12,13 @@ class Index(View):
 
 
 
+class AboutUs(View):
+    template_name = 'about_us.html'
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
+
+
+
 class PrintView(View):
     template_name = 'print.html'
     def get(self, request, *args, **kwargs):
